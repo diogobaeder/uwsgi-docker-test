@@ -1,11 +1,10 @@
 FROM python:3.8.5
 
-RUN mkdir /app
-COPY requirements.txt /app/
+RUN pip install 'uwsgi==2.0.19.1'
 
+RUN useradd -d /app app
 WORKDIR /app
-RUN pip install -r requirements.txt
-
-COPY . /app/
+USER app
+COPY --chown=app . /app/
 
 CMD uwsgi uwsgi-termination.ini
