@@ -1,0 +1,10 @@
+**/*.py[cdo]
+**/*.so
+**/__pycache__/
+.cache
+.idea/
+.git/
+.*.swp
+*.egg/
+*.egg-info/
+Dockerfile*
